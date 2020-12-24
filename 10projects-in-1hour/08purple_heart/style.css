@@ -1,0 +1,14 @@
+body{
+  width: 100%;
+}
+
+.heart{
+  position: fixed;
+  top:-10vh;
+  animation:fall 3s linear forwards;
+}
+@keyframes fall{
+  to {
+    transform: translateY(105vh)
+  }
+}
