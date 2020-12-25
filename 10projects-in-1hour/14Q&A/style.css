@@ -1,0 +1,46 @@
+.question{
+  padding:4px;
+  border:1px solid;
+  background-color:aquamarine; 
+}
+.answer.active{
+  padding:4px;
+  border:1px solid;
+  background-color:rgb(77, 221, 97); 
+  visibility:visible;
+}
+.answer{
+  visibility: hidden;
+}
+
+
+.answer1.active{
+  padding:4px;
+  border:1px solid;
+  background-color:rgb(77, 221, 97); 
+
+  visibility:visible;
+}
+.answer1{
+  visibility: hidden;
+}
+.answer2.active{
+  padding:4px;
+  border:1px solid;
+  background-color:rgb(77, 221, 97); 
+
+  visibility:visible;
+}
+.answer2{
+  visibility: hidden;
+}
+.answer3.active{
+  padding:4px;
+  border:1px solid;
+  background-color:rgb(77, 221, 97); 
+
+  visibility:visible;
+}
+.answer3{
+  visibility: hidden;
+}
