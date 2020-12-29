@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Third Electron APp</title>
+</head>
+<body>
+  <h3 id="header">Hello WOrld</h3>
+  <h3><a href="#" onclick="newWin()">New Window</a></h3>
+  <h3><a href="#" onclick="closeWin()">Close Window</a></h3>
+  <button type="button" onclick="process.crash()">Crash the</button>
+  <div id=container>
+    <div id="display">
+      <h3 id='display-num'>0</h3>
+      <div id="buttons" >
+        <button class="BUTTONS" id="decrease">decrease</button>
+        <button class="BUTTONS" id="reset">reset</button>
+        <button class="BUTTONS" id="increase">increase</button>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    let win;
+    function newWin(){
+       win =window.open('https://www.electronjs.org');
+    }
+    function closeWin(){
+      win.close()
+    }
+    setTimeout(closeWin,4000)
+    require('./renderer.js')
+  </script>
+</body>
+</html>
