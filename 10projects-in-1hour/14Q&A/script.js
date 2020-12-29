@@ -23,111 +23,54 @@ const data = [
   },
 ]
 
-var index = 0
-var index1 = 0
-var index2 = 0
-var index3 = 0
-
-
-var dataIndex = data[index]
-var dataIndex1 = data[index1]
-var dataIndex2 = data[index2]
-var dataIndex3 = data[index3]
-
 var container = document.createElement('div')
-container.style.alignContent="center"
-container.style.justifyContent="center"
+container.style.alignContent = "center"
+container.style.justifyContent = "center"
 container.style.alignItems = "center"
-
-var QuestionElement = document.createElement('h3');
-var QuestionElement1 = document.createElement('h3');
-var QuestionElement2 = document.createElement('h3');
-var QuestionElement3 = document.createElement('h3');
-QuestionElement.innerText = dataIndex.question
-QuestionElement1.innerText = dataIndex1.question
-QuestionElement2.innerText = dataIndex2.question
-QuestionElement3.innerText = dataIndex3.question
-
-
-var AnswerElement = document.createElement('p')
-var AnswerElement1 = document.createElement('p')
-var AnswerElement2 = document.createElement('p')
-var AnswerElement3 = document.createElement('p')
-AnswerElement.innerText = dataIndex.answers
-AnswerElement1.innerText = dataIndex1.answers
-AnswerElement2.innerText = dataIndex2.answers
-AnswerElement3.innerText = dataIndex3.answers
-
-// set style
-// better to use CSS though - just set class
-QuestionElement.setAttribute('class', 'question'); // and make sure myclass has some styles in css
-QuestionElement1.setAttribute('class', 'question'); // and make sure myclass has some styles in css
-QuestionElement2.setAttribute('class', 'question'); // and make sure myclass has some styles in css
-QuestionElement3.setAttribute('class', 'question'); // and make sure myclass has some styles in css
-
-AnswerElement.setAttribute('class', 'answer')
-AnswerElement1.setAttribute('class', 'answer1')
-AnswerElement2.setAttribute('class', 'answer2')
-AnswerElement3.setAttribute('class', 'answer3')
-
-
 document.body.appendChild(container);
-container.appendChild(QuestionElement)
-container.appendChild(AnswerElement)
-
-container.appendChild(QuestionElement1)
-container.appendChild(AnswerElement1)
-
-container.appendChild(QuestionElement2)
-container.appendChild(AnswerElement2)
-
-container.appendChild(QuestionElement3)
-container.appendChild(AnswerElement3)
+var index = 0
 
 
+do {
+  var dataIndex = data[index]
+  var QuestionElement = document.createElement('h3');
+  QuestionElement.innerText = dataIndex.question
+  QuestionElement.setAttribute('class', 'question'); // and make sure myclass has some styles in css
+  
+  var answers = document.getElementsByTagName('p')
+  var AnswerElement = document.createElement('p')
+  AnswerElement.innerText = dataIndex.answers
+  AnswerElement.setAttribute('id', 'answers')
+  
+  var buttonElement= document.createElement('button')
+  buttonElement.setAttribute('class','button')
+  buttonElement.innerText = "X"
+
+  container.appendChild(QuestionElement)
+  container.appendChild(AnswerElement)
+  QuestionElement.appendChild(buttonElement)
 
 
-var buttonElement= document.createElement('button')
-var buttonElement1= document.createElement('button')
-var buttonElement2= document.createElement('button')
-var buttonElement3 = document.createElement('button')
 
+  index++
 
-buttonElement.innerText = "X"
-buttonElement1.innerText = "X"
-buttonElement2.innerText = "X"
-buttonElement3.innerText = "X"
+} while (index < data.length);
 
-QuestionElement.appendChild(buttonElement)
-QuestionElement1.appendChild(buttonElement1)
-QuestionElement2.appendChild(buttonElement2)
-QuestionElement3.appendChild(buttonElement3)
+answers[0].setAttribute('class', 'answer')
+answers[1].setAttribute('class', 'answer1')
+answers[2].setAttribute('class', 'answer2')
+answers[3].setAttribute('class', 'answer3')
 
-
-// document.body.appendChild(AnswerElement);
-
-
-index++
-
-buttonElement.addEventListener('click', () => {
-  AnswerElement.classList.toggle('active')
+var buttons = document.getElementsByClassName('button')
+buttons[0].addEventListener('click', () => {
+  answers[0].classList.toggle('active')
 })
-buttonElement1.addEventListener('click', () => {
-  AnswerElement1.classList.toggle('active')
+buttons[1].addEventListener('click', () => {
+  answers[1].classList.toggle('active')
 })
-buttonElement2.addEventListener('click', () => {
-  AnswerElement2.classList.toggle('active')
+buttons[2].addEventListener('click', () => {
+  answers[2].classList.toggle('active')
 })
-buttonElement3.addEventListener('click', () => {
-  AnswerElement3.classList.toggle('active')
+buttons[3].addEventListener('click', () => {
+  answers[3].classList.toggle('active')
 })
-
-
-
-
-// var buttonElement = document.createElement('button')
-// buttonElement.innerText = "X"
-// buttonElement.addEventListener('click', () => {
-//   AnswerElement.classList.toggle('active')
-// })
-// QuestionElement.appendChild(buttonElement)

@@ -1,0 +1,5 @@
+what we are doing is implementing our pacckages in node.js instead of electron.js
+
+main process  ----> node.js
+sec. process ---->electron.js\
+sec. process ------>sqlite db
